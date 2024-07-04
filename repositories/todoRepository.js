@@ -42,10 +42,11 @@ return todo
     
 static create = async (params) =>  {
     try {
-        const todos = await Todo.create(params, {
+        const {title, description } = params.inputed
+        const todos = await Todo.create({title: title , description: description}, {
             returning: true
         })
-        
+    
         return todos
 
     } catch (err) {

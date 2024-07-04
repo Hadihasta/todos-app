@@ -25,7 +25,6 @@ class TodoController {
   static create = async (req, res, next) => {
     try {
       const todos = await TodoService.create(req.body)
-
       res.status(201).json({
         message: 'Added To list',
         data: todos,
